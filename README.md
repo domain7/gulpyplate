@@ -7,3 +7,6 @@ Things to add:
 - jshint
 - modernizr (scan/autobuild)
 + server (browsersync)
+
+
+`npm run gulp dev`
