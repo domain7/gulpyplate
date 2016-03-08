@@ -1,0 +1,14 @@
+/*
+	Layout goes in this file. Susy setup should go here too.
+	Layout classes should be prefixed `.l-`
+*/
+
+.l-container {
+  max-width: breakpoints(large);
+  @include clearfix;
+  padding-left: $gutter-body - gutter();
+  padding-right: $gutter-body - gutter();
+  .no-mediaqueries & {
+    min-width: breakpoint(no-mediaqueries);
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "globals": {
+    "jQuery": true,
+    "$": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "quotes": [1, "single"]
+  }
+}
