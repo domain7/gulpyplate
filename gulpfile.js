@@ -12,21 +12,25 @@ function lazyRequireTask(taskName, path, options) {
   });
 }
 
+const config = {
+  servePath: '.tmp'
+};
+
 lazyRequireTask('styles', './tasks/styles', {
   src: 'src/stylesheets/style.scss',
-  dst: '.tmp/stylesheets'
+  dst: config.servePath + '/stylesheets'
 });
 
 lazyRequireTask('clean', './tasks/clean', {
-  dst: '.tmp'
+  dst: config.servePath
 });
 
 lazyRequireTask('html', './tasks/html', {
-  dst: '.tmp'
+  dst: config.servePath
 });
 
 lazyRequireTask('serve', './tasks/serve', {
-  src: '.tmp'
+  src: config.servePath
 });
 
 gulp.task('build', gulp.series('clean', 'styles', 'html'));
