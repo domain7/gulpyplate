@@ -14,19 +14,19 @@ function lazyRequireTask(taskName, path, options) {
 
 lazyRequireTask('styles', './tasks/styles', {
   src: 'src/stylesheets/style.scss',
-  dst: 'public/stylesheets'
+  dst: '.tmp/stylesheets'
 });
 
 lazyRequireTask('clean', './tasks/clean', {
-  dst: 'public'
+  dst: '.tmp'
 });
 
 lazyRequireTask('html', './tasks/html', {
-  dst: 'public'
+  dst: '.tmp'
 });
 
 lazyRequireTask('serve', './tasks/serve', {
-  src: 'public'
+  src: '.tmp'
 });
 
 gulp.task('build', gulp.series('clean', 'styles', 'html'));
