@@ -12,28 +12,41 @@ function lazyRequireTask(taskName, path, options) {
   });
 }
 
+
 const config = {
   servePath: '.tmp'
 };
+
 
 lazyRequireTask('styles', './tasks/styles', {
   src: 'src/stylesheets/style.scss',
   dst: config.servePath + '/stylesheets'
 });
 
+
 lazyRequireTask('clean', './tasks/clean', {
   dst: config.servePath
 });
+
 
 lazyRequireTask('html', './tasks/html', {
   dst: config.servePath
 });
 
+
 lazyRequireTask('serve', './tasks/serve', {
   src: config.servePath
 });
 
-gulp.task('build', gulp.series('clean', 'styles', 'html'));
+
+lazyRequireTask('assets', './tasks/assets', {
+  src: 'src/images/*',
+  dst: config.servePath + '/images'
+});
+
+
+gulp.task('build', gulp.series('clean', 'styles', 'html', 'assets'));
+
 
 gulp.task('dev',
   gulp.series(
@@ -47,4 +60,3 @@ gulp.task('dev',
     )
   )
 );
-

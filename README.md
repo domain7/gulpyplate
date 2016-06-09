@@ -1,4 +1,8 @@
-Things to add:
+# Run
+`npm start`
+
+
+## Things to add:
 
 - SVG compile
 - JS minification/uglification
@@ -7,6 +11,3 @@ Things to add:
 - jshint
 - modernizr (scan/autobuild)
 + server (browsersync)
-
-
-`npm run gulp dev`
