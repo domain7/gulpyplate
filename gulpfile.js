@@ -45,7 +45,13 @@ lazyRequireTask('assets', './tasks/assets', {
 });
 
 
-gulp.task('build', gulp.series('clean', 'styles', 'html', 'assets'));
+lazyRequireTask('autoprefixer', './tasks/assets', {
+  src: config.servePath + '/stylesheets/style.css',
+  dst: config.servePath + '/stylesheets'
+});
+
+
+gulp.task('build', gulp.series('clean', 'styles', 'autoprefixer', 'html', 'assets'));
 
 
 gulp.task('dev',
